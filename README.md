@@ -1,12 +1,8 @@
 # PDF Generator FastAPI
-Backend implementation.
 
-## Design of system
+## Backend implementation.
 - Frameworks: FastAPI
 - Database: Postgres or sqlite
-
-Image of design:
-![image](https://github.com/Prafulpatekar/splitwise-fastapi/assets/56212683/4965c1a1-aaaa-4d03-946f-f482639af124)
 
 1. In above design there are 5 components
   - pdf_generator package (entrypoint)
