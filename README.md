@@ -4,7 +4,7 @@
 - Frameworks: FastAPI
 - Database: Postgres or sqlite
 
-1. In above design there are 5 components
+1. In backend design there are 5 components
   - pdf_generator package (entrypoint)
   - Routers (For routing API Endpoints)
   - Cruds (Controller): This will have all buisness logic
