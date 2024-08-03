@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+  api-app:
+    build:
+      context: .
+      dockerfile: fastapi.Dockerfile
+    container_name: api-app
+    ports:
+      - 8090:8090
+    networks:
+      - pdfnet
+    environment:
+      - APP_MODULE=pdf_generator.app:app
+      - PORT=8090
+      - POSTGRES_URL=postgresql://root:root$123@postgres:5432/pdf_generator
+    
+  postgres:
+    image: postgres:latest
+    container_name: app_postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: pdf_generator
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root$123
+    volumes:
+      - "postgres:/var/lib/postgresql/data"
+    networks:
+      - pdfnet
+
+networks:
+  pdfnet:
+    external: true
+
+volumes:
+  postgres:
+    name: postgres_volume
